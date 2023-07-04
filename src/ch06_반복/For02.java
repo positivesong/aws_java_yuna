@@ -17,7 +17,7 @@ public class For02 {
         for(int i = 0; i < 10; i++) {
             System.out.println(i);
         }
-    //for(2)
+        //for(2)
         for(int i = 0; i < 10; i++) {
             System.out.println(i);
         }

@@ -5,13 +5,15 @@ public class For03 {
 
         int n = 5;
         //줄바꿈마다 한 개씩 늘어나는 별
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {  // i 는 횟수라고 생각하기
             for(int j = 0; j < i + 1; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
-        System.out.println();
+        
+        System.out.println();  // 한줄 띄우기
+        
         //줄바꿈마다 한 개씩 적어지는 별
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i; j++) {
