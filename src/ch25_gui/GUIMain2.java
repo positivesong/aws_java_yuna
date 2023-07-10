@@ -19,16 +19,8 @@ public class GUIMain2 extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUIMain2 frame = new GUIMain2();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		GUIMain2 frame = new GUIMain2();
+		frame.setVisible(true);
 	}
 
 	/**
