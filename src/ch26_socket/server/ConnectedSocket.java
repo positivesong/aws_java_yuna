@@ -17,14 +17,28 @@ public class ConnectedSocket extends Thread {
 		BufferedReader bufferedReader = null;
 		
 		try {
-			while (true) {
+			while(true) {
 				bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String requestBody = bufferedReader.readLine();
-				System.out.println("입력데이터: " + requestBody);
+				System.out.println("입력데이터: " + requestBody);				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

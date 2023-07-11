@@ -31,7 +31,7 @@ public class SimpleServer {
 							bufferedReader = new BufferedReader(inputStreamReader);
 							String requestBody = bufferedReader.readLine();
 							
-							socketList.forEach(s -> {  // 여기 반복문이 중요!
+							socketList.forEach(s -> {
 								try {
 									PrintWriter printWriter = new PrintWriter(s.getOutputStream(), true);
 									printWriter.println("메세지내용(" + requestBody + ")");
@@ -40,7 +40,6 @@ public class SimpleServer {
 								}
 								
 							});
-							
 							
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -58,3 +57,9 @@ public class SimpleServer {
 	}
 	
 }
+
+
+
+
+
+

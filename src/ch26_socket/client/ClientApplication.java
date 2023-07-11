@@ -2,16 +2,15 @@ package ch26_socket.client;
 
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-
+import javax.swing.border.EmptyBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -27,13 +26,9 @@ public class ClientApplication extends JFrame {
 	private JPanel mainPanel;
 	private JTextField ipTextField;
 	private JTextField portTextField;
-	private JScrollPane connectedUserListScrollPane;
 	private JTextField messageTextField;
 	private JButton messageSendButton;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,35 +42,33 @@ public class ClientApplication extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public ClientApplication() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 330);
+		setBounds(100, 100, 624, 553);
 		mainPanel = new JPanel();
 		mainPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(mainPanel);
 		mainPanel.setLayout(null);
 		
+		
 		// <<< 채팅내용 >>>
 		JScrollPane chatTextAreaScrollPane = new JScrollPane();
-		chatTextAreaScrollPane.setBounds(12, 10, 272, 220);
+		chatTextAreaScrollPane.setBounds(12, 10, 393, 435);
 		mainPanel.add(chatTextAreaScrollPane);
 		
 		JTextArea chatTextArea = new JTextArea();
-		chatTextArea.setEditable(false);  // 에디터를 사용하지 않겠다.
+		chatTextArea.setEditable(false);
 		chatTextAreaScrollPane.setViewportView(chatTextArea);
 		
 		// <<< 채팅연결 >>>
 		ipTextField = new JTextField();
-		ipTextField.setBounds(306, 10, 116, 21);
+		ipTextField.setBounds(417, 10, 179, 29);
 		mainPanel.add(ipTextField);
 		ipTextField.setColumns(10);
 		
 		portTextField = new JTextField();
-		portTextField.setBounds(306, 41, 116, 21);
+		portTextField.setBounds(417, 49, 179, 29);
 		mainPanel.add(portTextField);
 		portTextField.setColumns(10);
 		
@@ -90,14 +83,14 @@ public class ClientApplication extends JFrame {
 					JOptionPane.showMessageDialog(
 							mainPanel, 
 							"IP와 PORT번호를 입력해주세요.", 
-							"접속 오류", 
+							"접속 오류",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				
 				try {
 					socket = new Socket(serverIp, Integer.parseInt(serverPort));
-					JOptionPane.showConfirmDialog(
+					JOptionPane.showMessageDialog(
 							mainPanel,
 							"서버와의 연결에 성공하였습니다.",
 							"접속 완료",
@@ -112,14 +105,15 @@ public class ClientApplication extends JFrame {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
+				
 			}
 		});
-		connectionButton.setBounds(306, 71, 116, 28);
+		connectionButton.setBounds(417, 88, 179, 29);
 		mainPanel.add(connectionButton);
 		
 		// <<< 접속자 >>>
 		JScrollPane connectedUserListScrollPane = new JScrollPane();
-		connectedUserListScrollPane.setBounds(306, 109, 116, 121);
+		connectedUserListScrollPane.setBounds(417, 127, 179, 318);
 		mainPanel.add(connectedUserListScrollPane);
 		
 		JList connectedUserList = new JList();
@@ -135,14 +129,24 @@ public class ClientApplication extends JFrame {
 				}
 			}
 		});
-		messageTextField.setBounds(12, 240, 341, 41);
-		messageTextField.setEditable(false);  // 에디터를 사용하지 않겠다.
+		messageTextField.setBounds(12, 455, 507, 49);
+		messageTextField.setEditable(false);
 		mainPanel.add(messageTextField);
 		messageTextField.setColumns(10);
 		
 		messageSendButton = new JButton("전송");
-		messageSendButton.setBounds(360, 240, 62, 41);
-		messageSendButton.setEnabled(false);  // 에디터를 사용하지 않겠다.
+		messageSendButton.setBounds(531, 455, 65, 49);
+		messageSendButton.setEnabled(false);
 		mainPanel.add(messageSendButton);
 	}
 }
+
+
+
+
+
+
+
+
+
+

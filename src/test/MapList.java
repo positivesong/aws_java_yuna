@@ -21,23 +21,23 @@ public class MapList {
 //		}
 //	}
 	
-	public static void main(String[] args) {
-		List<String> colors = null;
-		List<String> sizes = null;
-		
-		Map<String, List<String>> options = new HashMap<>();
-		
-		List<String> List = new List(List<String>);
-		
-		List.add("red");
-		List.add("green");
-		List.add("blue");
-		
-		System.out.println(options);
-		
-		for (Map.Entry<String, List<String>> entry : options.entrySet()) {
-			
-		}
-	}
+//	public static void main(String[] args) {
+//		List<String> colors = null;
+//		List<String> sizes = null;
+//		
+//		Map<String, List<String>> options = new HashMap<>();
+//		
+//		List<String> List = new List(List<String>);
+//		
+//		List.add("red");
+//		List.add("green");
+//		List.add("blue");
+//		
+//		System.out.println(options);
+//		
+//		for (Map.Entry<String, List<String>> entry : options.entrySet()) {
+//			 
+//		}
+//	}
 	
 }

@@ -8,7 +8,6 @@ import lombok.Getter;
 public class ConnectedClientController {
 
 	private static ConnectedClientController instance;
-	
 	@Getter
 	private List<ConnectedSocket> connectedSockets;
 	
@@ -22,5 +21,11 @@ public class ConnectedClientController {
 		}
 		return instance;
 	}
-
+	
 }
+
+
+
+
+
+

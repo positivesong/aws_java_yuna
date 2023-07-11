@@ -19,9 +19,9 @@ public class SimpleClient {
 			Thread inputThread = new Thread(() -> {
 				try {
 //					InputStream inputStream = socket.getInputStream();
-//					InputStreamReader inputStreamReader = new InputStreamReader(InputStream);
+//					InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 //					BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-					while (true) {
+					while(true) {
 						BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 						String requestBody = bufferedReader.readLine();
 						System.out.println("내용: " + requestBody);
@@ -36,7 +36,7 @@ public class SimpleClient {
 			
 			while(true) {
 				PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
-				System.out.println("입력: ");
+				System.out.print("입력: ");
 				String input = scanner.nextLine();
 				
 				printWriter.println(input);
@@ -47,6 +47,7 @@ public class SimpleClient {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 }
